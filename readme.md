@@ -12,7 +12,7 @@ This project is a simple blog web app created to practice full-stack JavaScript 
 - **JavaScript (Node.js)**
 - **EJS (Embedded JavaScript Templates)**
 - **CSS**
-- Typical npm tooling (.gitignore, package.json) :contentReference[oaicite:1]{index=1}
+- Typical npm tooling (.gitignore, package.json)
 
 ---
 
