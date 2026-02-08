@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+    <div class="blog">
+        <form class="blog-list" action="/edit" method="GET">
+            <% for( let i = bList.length-1 ; i >= 0; i-- ) { %>
+                <button class="blog-element blog-list-item" name="index" value="<%= i %>"><%= bList[i].title %></button>
+            <% } %>
+        </form>
+    </div>
+    <form class="update-form" action="/update/blog" method="POST">
+        <input type="hidden" name="index" value="<%= bList.indexOf(viewBlog) %>">
+        <input class="form-element title-input" name="title" type="text" placeholder="Title" value="<%= viewBlog.title %>">
+        <textarea class="form-element content-input" name="content" placeholder="Content"><%= viewBlog.content %></textarea>
+        <button class="form-element update-btn" type="submit" name="action" value="update">Update</button>
+        <button class="form-element delete-btn" type="submit" name="action" value="delete">Delete</button>
+    </form>
+
+</div>
+
+<%- include("partials/footer.ejs") %>

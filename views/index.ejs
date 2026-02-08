@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+    <div class="blog">
+        <form class="blog-list" action="/read" method="GET">
+            <% for( let i = bList.length-1 ; i >= 0; i-- ) { %>
+                <button class="blog-element blog-list-item" name="index" value="<%= i %>"><%= bList[i].title %></button>
+            <% } %>
+        </form>
+    </div>
+    <div class="blog">
+        <div class="blog-element">
+            <h2 class="blog-title"><%= viewBlog.title %></h2>
+            <textarea readonly class="blog-content blog-element"><%= viewBlog.content %></textarea>
+        </div>
+        <!-- <p ><strong style="font-size: 2rem;"><%= viewBlog.title %></strong><br> <%= viewBlog.content %></p> -->
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
